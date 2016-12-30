@@ -107,3 +107,8 @@ query get {
 }
 ``` 
 
+## TODO
+
+レクチャーでは、GraphiQLでクエリをテストするところまでだったので、Relayを使ってReactと結合する。
+
+[Using GraphQL](https://www.fullstackreact.com/p/using-graphql/)
