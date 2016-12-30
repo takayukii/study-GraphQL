@@ -1,4 +1,5 @@
 const app = require('express')();
+const graphqlHTTP = require('express-graphql');
 const schema = require('./schema');
 const loader = require('./loader');
 
@@ -6,6 +7,11 @@ app.use((req, res, next) => {
   req.loader = loader();
   next();
 });
+
+app.post('/graphql', graphqlHTTP({
+  schema: schema(loader()).schema,
+  graphiql: true
+}));
 
 app.get('/', (req, res) => {
   const id = req.query.film || 1;

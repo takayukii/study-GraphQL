@@ -23,7 +23,9 @@ module.exports = (loader) => {
       population: Int
     }
   
+    # This is Query comment
     type Query {
+      # This is find_film comment
       find_film (id: Int): Film
       find_person (id: Int): Character
     }
