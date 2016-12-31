@@ -4,8 +4,6 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./schema');
 const loader = require('./loader');
 
-const path = require('path');
-
 app.use(express.static('build'));
 app.use((req, res, next) => {
   req.loader = loader();
