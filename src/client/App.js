@@ -2,7 +2,37 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import axios from 'axios';
+
 class App extends Component {
+
+  componentDidMount() {
+    const payload = {
+      query: `
+query find ($film: Int) {
+  find_film(id: $film) {
+    title
+    producers
+    characters(limit: 2) {
+      name
+      homeworld {
+        name
+      }
+    }
+  }
+}
+`,
+      variables: {
+        film: 1
+      }
+    };
+
+    axios.post('/graphql', payload)
+      .then((res) => {
+        console.log(res);
+      });
+  }
+
   render() {
     return (
       <div className="App">
