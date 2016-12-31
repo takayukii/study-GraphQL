@@ -20,7 +20,7 @@ GraphiQL.appのHTTPメソッドはPOSTにする。Command + Rの再読込で更�
 
 #### サーバーの起動
 
-`node src/server_query/index.js`を実行する
+`node servers/query/index.js`を実行する
 
 #### GraphiQL
 
@@ -59,7 +59,7 @@ query find ($film: Int) {
 
 #### サーバーの起動
 
-`node src/server_mutation/index.js`を実行する
+`node servers/mutation/index.js`を実行する
 
 #### GraphiQL
 
@@ -107,8 +107,9 @@ query get {
 }
 ``` 
 
-## TODO
+## 備考
 
-レクチャーでは、GraphiQLでクエリをテストするところまでだったので、Relayを使ってReactと結合する。
+ReactからGraphQLへクエリを投げる時、Relayを利用しているサンプルが多い。Relayの立ち位置がよく分からなかったので調べてみたら下記の記事が見つかった。
+RelayはGraphQL依存があり、アプリアーキテクチャに大きく関わってくるものであるため、Reduxがほぼデファクトの今導入するか少し微妙に感じた。
 
-[Using GraphQL](https://www.fullstackreact.com/p/using-graphql/)
+[Comparing Redux and Relay | Reindex](https://www.reindex.io/blog/redux-and-relay/)
